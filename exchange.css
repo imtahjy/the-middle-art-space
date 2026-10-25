@@ -1,0 +1,59 @@
+.exchange-page .exhibitions-list-heading{border-bottom:1px solid var(--line)}
+.exchange-page .exchange-list{padding-bottom:18px}
+.exchange-page .exchange-item{min-height:168px;padding:24px 80px;border-top:0;border-bottom:1px solid var(--line);display:flex;gap:40px;align-items:flex-start}
+
+.exchange-page .exchange-item img {
+  width: 120px;
+  height: 120px;
+}
+
+.exchange-page .exchange-copy{min-width:0;min-height:120px;display:flex;flex:1 1 auto;flex-direction:column;justify-content:space-between;gap:8px}
+
+.exchange-page .exchange-copy h2{margin:0;font-size:16px;line-height:24px;font-weight:400}
+.exchange-page .exchange-copy h2 span{display:block}
+
+.exchange-page .exchange-meta{margin:0;color:#636569;font-size:16px;line-height:24px;display:flex;gap:16px}
+
+@media (max-width: 900px) {
+  .exchange-page .exchange-item {
+    min-height: 136px;
+    gap: 24px;
+  }
+
+  .exchange-page .exchange-item img {
+    width: 88px;
+    height: 88px;
+  }
+
+  .exchange-page .exchange-copy {
+    min-height: 88px;
+  }
+
+}
+
+@media (max-width: 560px) {
+  .exchange-page .exchange-item {
+    min-height: 112px;
+    padding: 20px;
+    gap: 12px;
+  }
+
+  .exchange-page .exchange-item img {
+    width: 72px;
+    height: 72px;
+  }
+
+  .exchange-page .exchange-copy {
+    min-height: 72px;
+  }
+
+  .exchange-page .exchange-copy h2{font-size:14px;line-height:20px}
+  .exchange-page .exchange-meta{font-size:12px;line-height:18px}
+}
+
+@media (min-width: 901px) and (max-width: 1199px) {
+  .exchange-page .exchange-copy {
+    min-height: 120px;
+  }
+
+}

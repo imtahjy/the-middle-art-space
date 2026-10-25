@@ -1,0 +1,112 @@
+:root {
+  --page-title-left: 80px;
+  --page-title-top: 80px;
+  --page-title-height: 200px;
+}
+
+.page-heading {
+  height: var(--page-title-height);
+  padding: var(--page-title-top) var(--page-title-left) 0;
+  line-height: 48px;
+}
+
+.exhibitions-heading,
+.publications-page .publications-heading {
+  height: var(--page-title-height);
+}
+
+.news-grid-page .exhibitions-heading {
+  height: var(--page-title-height);
+}
+
+.exhibitions-heading h1,
+.exhibitions-list-heading h1 {
+  left: var(--page-title-left);
+  top: var(--page-title-top);
+  transform: none;
+  line-height: 48px;
+}
+
+.news-grid-page .exhibitions-heading h1 {
+  left: var(--page-title-left) !important;
+  top: var(--page-title-top) !important;
+}
+
+.about-main {
+  padding-top: var(--page-title-top);
+  padding-left: var(--page-title-left);
+}
+
+.year-control {
+  left: var(--page-title-left);
+  top: 152px;
+}
+
+@media (max-width: 900px) {
+  :root {
+    --page-title-left: 24px;
+    --page-title-top: 105px;
+    --page-title-height: 170px;
+  }
+
+  .page-heading {
+    padding: var(--page-title-top) var(--page-title-left) 0;
+    line-height: 38px;
+  }
+
+  .exhibitions-heading h1,
+  .exhibitions-list-heading h1 {
+    left: var(--page-title-left);
+    top: var(--page-title-top);
+    transform: none;
+    line-height: 38px;
+  }
+
+  .about-main {
+    padding-top: var(--page-title-top);
+    padding-left: var(--page-title-left);
+  }
+
+  .year-control {
+    left: var(--page-title-left);
+    top: 145px;
+  }
+}
+
+@media (max-width: 560px) {
+  :root {
+    --page-title-left: 20px;
+    --page-title-top: 98px;
+    --page-title-height: 150px;
+  }
+
+  .page-heading {
+    padding-top: var(--page-title-top);
+    padding-left: var(--page-title-left);
+    padding-right: var(--page-title-left);
+    line-height: 32px;
+  }
+
+  .exhibitions-heading,
+  .publications-page .publications-heading {
+    height: var(--page-title-height);
+  }
+
+  .exhibitions-heading h1,
+  .exhibitions-list-heading h1 {
+    left: var(--page-title-left);
+    top: var(--page-title-top);
+    transform: none;
+    line-height: 32px;
+  }
+
+  .about-main {
+    padding-top: var(--page-title-top);
+    padding-left: var(--page-title-left);
+  }
+
+  .year-control {
+    left: var(--page-title-left);
+    top: 132px;
+  }
+}

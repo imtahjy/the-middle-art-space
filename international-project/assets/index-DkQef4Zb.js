@@ -1,0 +1,1 @@
+import{r as o,j as e,B as i}from"./vendor-ui-core-BMBwWZdV.js";function r({children:t}){return e.jsx(i,{sx:{width:"100%",minHeight:"100vh",display:"flex",flexDirection:"column",bgcolor:"#FFFFFF"},children:t})}const x=o.memo(r);export{x as S};

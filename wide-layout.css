@@ -1,0 +1,78 @@
+/*
+ * The desktop composition is based on a 1440px viewport:
+ * 256px sidebar + 80px gutter + 1024px content + 80px gutter.
+ * Above 1440px the 1024px content stays fixed and the side grid extends.
+ */
+.exhibitions-page .project-grid::after {
+  border-left: 0;
+}
+
+@media (min-width: 1441px) {
+  :root {
+    --wide-content: 1024px;
+    --wide-gutter: calc((100% - var(--wide-content)) / 2);
+  }
+
+  .page-heading {
+    padding-left: var(--wide-gutter);
+    padding-right: var(--wide-gutter);
+  }
+
+  .exhibitions-heading h1,
+  .year-control {
+    left: var(--wide-gutter);
+  }
+
+  .about-main {
+    padding-left: var(--wide-gutter);
+    padding-right: var(--wide-gutter);
+  }
+
+  .news-list-item,
+  .exchange-item,
+  .exchange-page .exchange-item,
+  .ongoing-head,
+  .ongoing-row {
+    padding-left: var(--wide-gutter);
+    padding-right: var(--wide-gutter);
+  }
+
+  .exhibitions-page .project-grid {
+    grid-template-columns:
+      minmax(0, 1fr)
+      repeat(3, minmax(0, 341.333px))
+      minmax(0, 1fr);
+  }
+
+  .exhibitions-page .project-card {
+    grid-row: auto !important;
+  }
+
+  .exhibitions-page .project-card:nth-child(1),
+  .exhibitions-page .project-card:nth-child(4) {
+    grid-column: 2;
+  }
+
+  .exhibitions-page .project-card:nth-child(2),
+  .exhibitions-page .project-card:nth-child(5) {
+    grid-column: 3;
+  }
+
+  .exhibitions-page .project-card:nth-child(3),
+  .exhibitions-page .project-card:nth-child(6) {
+    grid-column: 4;
+  }
+
+  .exhibitions-page .project-grid::before,
+  .exhibitions-page .project-grid::after {
+    grid-row: 1 / 3;
+  }
+
+  .exhibitions-page .project-grid::before {
+    grid-column: 1;
+  }
+
+  .exhibitions-page .project-grid::after {
+    grid-column: 5;
+  }
+}
