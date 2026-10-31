@@ -1,202 +1,45 @@
-.about-page {
-  background: #f9f8f6;
+.about-page{background:#f9f8f6}
+.about-main{position:relative;min-height:100vh;margin-left:var(--sidebar);padding-top:80px;padding-left:0}
+.about-heading-row{height:120px;padding:0 80px;display:flex;align-items:flex-start}
+.about-heading-row h1{margin:0;color:#1e1e1e;font-size:40px;line-height:48px;font-weight:200}
+.about-introduction p,.about-info-section p{margin:0}
+.about-info-section{display:flex;flex-direction:column;gap:8px}
+.about-info-section h2{margin:0;color:#636569;font-size:14px;line-height:20px;font-weight:400}
+.about-info-section a{text-decoration:underline}
+
+/* Figma 558:863 */
+.about-version-two{border-top:1px solid var(--line)}
+.about-v2-hero{position:relative;height:513px;overflow:hidden}
+.about-v2-hero>img{position:absolute;top:-31.73%;left:0;width:100%;height:308.78%;max-width:none;object-fit:cover;object-position:center}
+.about-v2-label{position:absolute;left:80px;bottom:0;width:318px;height:96px;padding:16px 24px;background:#f9f8f6;display:flex;flex-direction:column;justify-content:center;font-size:24px;line-height:32px;font-weight:300}
+.about-v2-info{margin:0 80px;border-right:1px solid var(--line);border-left:1px solid var(--line);color:#000;font-size:16px;line-height:32px}
+.about-v2-info .about-introduction{min-height:208px;padding:16px 24px;border-top:1px solid var(--line)}
+.about-v2-info .about-info-section{min-height:141px;padding:16px 24px;border-top:1px solid var(--line)}
+@media(max-width:1100px) and (min-width:901px){
+  .about-heading-row{padding-right:48px;padding-left:48px}
+  .about-v2-label{left:48px}
+  .about-v2-info{margin-right:48px;margin-left:48px}
 }
 
-.about-main {
-  position: relative;
-  min-height: 100vh;
-  margin-left: var(--sidebar);
-  padding: 80px 80px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 72px;
+@media(max-width:900px){
+  .about-main{margin-left:0;padding-top:105px;padding-left:0}
+  .about-heading-row{height:65px;padding:0 24px}
+  .about-heading-row h1{font-size:31px;line-height:38px}
+  .about-v2-hero{height:56vw;min-height:360px}
+  .about-v2-hero>img{top:-22%;height:255%}
+  .about-v2-label{left:24px;width:286px;height:84px;padding:12px 20px;font-size:21px;line-height:28px}
+  .about-v2-info{margin:0 24px;font-size:15px;line-height:28px}
+  .about-v2-info .about-introduction{min-height:0;padding:20px}
+  .about-v2-info .about-info-section{min-height:0;padding:20px}
 }
 
-.about-main::before {
-  content: "";
-  position: absolute;
-  z-index: 1;
-  top: 200px;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: var(--line);
-  pointer-events: none;
-}
-
-.about-main h1 {
-  margin: 0;
-  color: #1e1e1e;
-  font-size: 40px;
-  line-height: 48px;
-  font-weight: 200;
-}
-
-.about-layout {
-  width: 100%;
-  min-height: max(600px, calc(100vh - 200px));
-  margin-left: 0;
-  display: grid;
-  grid-template-columns: minmax(0, 1.227fr) minmax(64px, .25fr) minmax(0, 1fr);
-  align-items: start;
-  border-left: 1px solid var(--line);
-  border-right: 1px solid var(--line);
-}
-
-.about-copy {
-  width: 100%;
-  min-width: 0;
-  height: 100%;
-  min-height: 600px;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  border-right: 1px solid var(--line);
-  color: #1e1e1e;
-  font-size: 16px;
-  line-height: 32px;
-}
-
-.about-copy p {
-  margin: 0;
-}
-
-.about-copy > div:first-child {
-  min-height: 321px;
-  padding: 16px;
-}
-
-.about-section {
-  min-height: 125px;
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  border-top: 1px solid var(--line);
-}
-
-.about-section h2 {
-  margin: 0;
-  color: #636569;
-  font-size: 14px;
-  line-height: 20px;
-  font-weight: 400;
-}
-
-.about-section a {
-  text-decoration: underline;
-}
-
-.about-image-column {
-  grid-column: 3;
-  height: 100%;
-  min-height: 100%;
-  border-left: 1px solid var(--line);
-}
-
-.about-image {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 420 / 410;
-  object-fit: cover;
-}
-
-@media (max-width: 1100px) and (min-width: 901px) {
-  .about-main {
-    padding-left: 48px;
-    padding-right: 48px;
-  }
-
-  .about-layout {
-    width: 100%;
-    margin-left: 0;
-    grid-template-columns: minmax(0, 1.1fr) 48px minmax(0, .9fr);
-  }
-
-  .about-copy > div:first-child {
-    min-height: auto;
-  }
-}
-
-@media (max-width: 900px) {
-  .about-main {
-    margin-left: 0;
-    padding: 105px 24px 64px;
-    gap: 27px;
-  }
-
-  .about-main::before {
-    top: 170px;
-  }
-
-  .about-main h1 {
-    font-size: 31px;
-    line-height: 38px;
-  }
-
-  .about-layout {
-    width: calc(100% + 48px);
-    min-height: 0;
-    margin-left: -24px;
-    grid-template-columns: 1fr;
-    border-left: 0;
-    border-right: 0;
-  }
-
-  .about-copy {
-    height: auto;
-    min-height: 0;
-    border-right: 0;
-    font-size: 15px;
-    line-height: 28px;
-  }
-
-  .about-copy > div:first-child {
-    min-height: 0;
-    padding: 24px;
-  }
-
-  .about-section {
-    min-height: 0;
-    padding: 20px 24px;
-  }
-
-  .about-image-column {
-    grid-column: 1;
-    height: auto;
-    min-height: 0;
-    border-top: 1px solid var(--line);
-    border-left: 0;
-  }
-
-  .about-image {
-    width: 100%;
-  }
-}
-
-@media (max-width: 560px) {
-  .about-main {
-    padding: 98px 20px 48px;
-    gap: 20px;
-  }
-
-  .about-main::before {
-    top: 150px;
-  }
-
-  .about-main h1 {
-    font-size: 27px;
-    line-height: 32px;
-  }
-
-  .about-layout {
-    width: calc(100% + 40px);
-    margin-left: -20px;
-  }
-
-  .about-copy > div:first-child,
-  .about-section {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
+@media(max-width:560px){
+  .about-main{padding-top:98px}
+  .about-heading-row{height:52px;padding:0 20px}
+  .about-heading-row h1{font-size:27px;line-height:32px}
+  .about-v2-hero{height:72vw;min-height:300px}
+  .about-v2-hero>img{top:-12%;height:220%}
+  .about-v2-label{left:20px;width:235px;height:72px;padding:10px 16px;font-size:18px;line-height:24px}
+  .about-v2-info{margin:0 20px;font-size:14px;line-height:24px}
+  .about-v2-info .about-introduction,.about-v2-info .about-info-section{padding:18px 16px}
 }

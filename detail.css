@@ -47,7 +47,7 @@
 .project-detail .ongoing-head{height:44px;padding:0 80px}
 .project-detail .ongoing-head h2{font-size:20px;line-height:24px}
 .project-detail .ongoing-list{border-top:0}
-.project-detail .ongoing-row{height:168px;min-height:168px;padding:24px 80px;border-top:1px solid #b1b2b4;border-bottom:0;gap:40px}
+.project-detail .ongoing-row{height:168px;min-height:168px;padding:24px 80px;border-top:1px solid var(--line);border-bottom:0;gap:40px}
 .project-detail .ongoing-row h3{font-size:16px;line-height:32px}
 .project-detail .detail-footer{min-height:347px}
 .project-detail .detail-footer nav{grid-template-rows:repeat(4,24px);grid-auto-flow:column;grid-template-columns:max-content max-content}

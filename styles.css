@@ -34,3 +34,232 @@
 .hero .slide-index button:hover,.hero .slide-index button:focus-visible{background:#f2f2f2;border-radius:3px}
 @media(max-width:900px){.hero .hero-bottom{width:100%;padding:14px 24px;gap:16px}.hero .hero-caption{grid-template-columns:110px 180px minmax(160px,1fr);gap:24px;font-size:12px;line-height:18px}}
 @media(max-width:560px){.hero .hero-bottom{padding:10px 12px;align-items:flex-end}.hero .hero-caption{grid-template-columns:1fr;gap:2px;font-size:10px;line-height:14px}.hero .hero-caption>div:nth-child(2){grid-column:auto}.hero .slide-index{font-size:12px;line-height:18px;gap:4px}}
+
+/* Page transition prototype: redraw only the borders that already belong to the next page. */
+.page-transition-overlay{
+  position:fixed;
+  z-index:900;
+  inset:0 0 0 var(--sidebar);
+  overflow:hidden;
+  pointer-events:none;
+  background:rgba(255,255,255,0);
+  visibility:hidden;
+  transition:background-color 140ms ease,visibility 0s linear 500ms;
+}
+.page-transition-line{
+  position:absolute;
+  display:block;
+  background:#d9d9d9;
+  opacity:1;
+  will-change:transform,opacity;
+}
+.page-transition-line.is-vertical{
+  top:var(--line-start);
+  left:var(--line-cross);
+  width:1px;
+  height:var(--line-length);
+  transform:scaleY(0);
+  transform-origin:top;
+}
+.page-transition-line.is-horizontal{
+  left:var(--line-start);
+  top:var(--line-cross);
+  width:var(--line-length);
+  height:1px;
+  transform:scaleX(0);
+  transform-origin:left;
+}
+.page-transition-leave .page-transition-overlay{
+  visibility:visible;
+  background:#fff;
+  transition:background-color 130ms ease;
+}
+.page-transition-leave main{
+  opacity:0;
+  transition:opacity 120ms ease;
+}
+.page-transition-enter main{opacity:1}
+.page-transition-enter main img{opacity:1;transform:none}
+.page-transition-enter .page-transition-overlay{
+  visibility:visible;
+  background:transparent;
+  transition:none;
+}
+.page-transition-enter .page-transition-line{
+  opacity:1;
+}
+.page-transition-enter.page-transition-draw .page-transition-line{
+  transform:scale(1);
+  transition:transform 260ms cubic-bezier(.65,0,.35,1) var(--line-delay);
+}
+.page-transition-enter.page-transition-reveal main{
+  opacity:1;
+  transition:none;
+}
+.page-transition-enter.page-transition-reveal main img{
+  opacity:1;
+  transform:none;
+  transition:none;
+}
+.page-transition-enter.page-transition-reveal .page-transition-overlay{
+  background:transparent;
+  visibility:hidden;
+  transition:visibility 0s linear 620ms;
+}
+.page-transition-enter.page-transition-reveal .page-transition-line{
+  opacity:0;
+  transition:opacity 180ms ease 450ms;
+}
+@media(max-width:900px){
+  .page-transition-overlay{inset:68px 0 0}
+}
+@media(prefers-reduced-motion:reduce){
+  .page-transition-overlay{display:none}
+  .page-transition-leave main,.page-transition-enter main,.page-transition-enter main img{opacity:1;transform:none;transition:none}
+}
+
+/* Existing page borders draw only when their section approaches the viewport. */
+.scroll-border-line{
+  position:absolute;
+  z-index:6;
+  display:block;
+  pointer-events:none;
+  background:var(--line);
+  will-change:transform;
+  transition:transform 420ms cubic-bezier(.65,0,.35,1) var(--scroll-line-delay,0ms);
+}
+.scroll-border-line.is-top,
+.scroll-border-line.is-bottom{
+  right:0;
+  left:0;
+  height:1px;
+  transform:scaleX(0);
+  transform-origin:left center;
+}
+.scroll-border-line.is-top{top:-1px}
+.scroll-border-line.is-bottom{bottom:0}
+.scroll-border-line.is-left,
+.scroll-border-line.is-right{
+  top:0;
+  bottom:0;
+  width:1px;
+  transform:scaleY(0);
+  transform-origin:center top;
+}
+.scroll-border-line.is-left{left:0}
+.scroll-border-line.is-right{right:0}
+.scroll-line-host.is-line-visible>.scroll-border-line{transform:scale(1)}
+@media(prefers-reduced-motion:reduce){
+  .scroll-border-line{display:none}
+}
+
+/* Figma 362:4355 — homepage footer. */
+.footer{
+  min-height:0;
+  padding:24px 80px;
+  background:#19191a;
+  color:#fff;
+  display:flex;
+  flex-direction:column;
+  gap:40px;
+}
+.footer-top{
+  width:100%;
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:48px;
+}
+.footer-brand{
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:10px;
+}
+.footer-logo-slot{
+  width:123px;
+  height:72px;
+  flex:0 0 72px;
+  display:flex;
+  align-items:flex-end;
+  justify-content:flex-start;
+}
+.footer-logo-slot img{
+  width:123px;
+  height:72px;
+  max-width:none;
+  flex:0 0 123px;
+  object-fit:fill;
+  object-position:left bottom;
+}
+.footer-brand p{
+  margin:0;
+  color:#fff;
+  font-size:14px;
+  line-height:28px;
+  font-weight:400;
+  white-space:nowrap;
+}
+.footer .footer-nav{
+  flex:none;
+  display:flex;
+  align-items:flex-start;
+  gap:40px;
+  font-size:16px;
+  line-height:24px;
+}
+.footer-nav-column{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:16px;
+}
+.footer-nav a:hover,.footer-nav a:focus-visible{opacity:.5}
+.footer-divider{
+  width:100%;
+  height:1px;
+  flex:none;
+  background:#4b4c4e;
+}
+.footer-bottom{
+  width:100%;
+  padding:0;
+  border:0;
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:24px;
+}
+.footer-socials{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+.footer-socials a,.footer-socials img{
+  display:block;
+  width:16px;
+  height:16px;
+  flex:none;
+}
+.footer-socials a:hover,.footer-socials a:focus-visible{opacity:.5}
+.footer-bottom p{
+  margin:0;
+  color:#fff;
+  font-size:14px;
+  line-height:20px;
+  font-weight:400;
+  white-space:nowrap;
+}
+@media(max-width:900px){
+  .footer{padding:24px;gap:32px}
+  .footer-top{gap:32px}
+  .footer .footer-nav{gap:28px;font-size:14px}
+}
+@media(max-width:640px){
+  .footer-top{flex-direction:column}
+  .footer .footer-nav{width:100%;justify-content:space-between}
+  .footer-brand p{font-size:12px;line-height:22px;white-space:normal}
+  .footer-bottom{align-items:flex-end}
+  .footer-bottom p{font-size:11px;line-height:16px;text-align:right;white-space:normal}
+}
