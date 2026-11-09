@@ -1,15 +1,17 @@
 const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 const transitionStorageKey = 'midou-page-transition';
+const transitionWindowName = '__midou_page_transition_pending__';
 
 function getTransitionState() {
   try {
-    return sessionStorage.getItem(transitionStorageKey);
+    return sessionStorage.getItem(transitionStorageKey) || (window.name === transitionWindowName ? 'pending' : null);
   } catch {
-    return null;
+    return window.name === transitionWindowName ? 'pending' : null;
   }
 }
 
 function setTransitionState(value) {
+  window.name = value === 'pending' ? transitionWindowName : '';
   try {
     sessionStorage.setItem(transitionStorageKey, value);
   } catch {
@@ -18,6 +20,7 @@ function setTransitionState(value) {
 }
 
 function clearTransitionState() {
+  if (window.name === transitionWindowName) window.name = '';
   try {
     sessionStorage.removeItem(transitionStorageKey);
   } catch {
@@ -108,12 +111,13 @@ function revealTransitionPage() {
 
   clearTransitionState();
   document.body.classList.add('page-transition-enter');
-  // The page's own border spans draw once and remain in place. Avoid drawing a
-  // second overlay copy, which caused a visible flash when that copy faded out.
+  window.requestAnimationFrame(() => {
+    window.requestAnimationFrame(() => document.body.classList.add('page-transition-reveal'));
+  });
   window.setTimeout(() => {
-    document.body.classList.remove('page-transition-enter');
+    document.body.classList.remove('page-transition-enter', 'page-transition-reveal');
     pageTransitionOverlay.replaceChildren();
-  }, 120);
+  }, 420);
 }
 
 function isTransitionLink(link, event) {
@@ -135,10 +139,15 @@ document.addEventListener('click', (event) => {
   setTransitionState('pending');
   window.setTimeout(() => {
     window.location.href = link.href;
-  }, 190);
+  }, 150);
 }, true);
 
 revealTransitionPage();
+
+window.addEventListener('pageshow', () => {
+  // A page restored from the browser cache can retain its leaving class.
+  document.body.classList.remove('page-transition-leave');
+});
 
 function initializeScrollLineReveal(root = document) {
   if (reducedMotionQuery.matches) return;
@@ -150,11 +159,14 @@ function initializeScrollLineReveal(root = document) {
     { name: 'left', width: 'borderLeftWidth', style: 'borderLeftStyle', color: 'borderLeftColor', length: 'height' },
   ];
   const hosts = [];
+  const measuredHosts = [];
 
   const candidates = root === document
     ? document.querySelectorAll('main, main *')
     : [root, ...root.querySelectorAll('*')];
 
+  // Read every layout value first. Mixing these reads with DOM writes caused a
+  // visible pause on border-heavy pages such as Exhibitions.
   candidates.forEach((element) => {
     if (!(element instanceof HTMLElement) || element.closest('.page-transition-overlay') || element.closest('[data-static-lines]')) return;
     if (element.classList.contains('scroll-line-host')) return;
@@ -172,13 +184,22 @@ function initializeScrollLineReveal(root = document) {
     });
 
     if (!animatedSides.length) return;
-    if (style.position === 'static') element.style.position = 'relative';
+    measuredHosts.push({ element, animatedSides, needsPosition: style.position === 'static' });
+  });
+
+  measuredHosts.forEach(({ element, animatedSides, needsPosition }) => {
+    if (needsPosition) element.style.position = 'relative';
     element.classList.add('scroll-line-host');
 
     animatedSides.forEach((side, index) => {
       const line = document.createElement('span');
       line.className = `scroll-border-line is-${side.name}`;
-      line.style.setProperty('--scroll-line-delay', `${index * 55}ms`);
+      const isHorizontal = side.name === 'top' || side.name === 'bottom';
+      const origin = isHorizontal
+        ? (Math.random() < 0.5 ? 'left center' : 'right center')
+        : (Math.random() < 0.5 ? 'center top' : 'center bottom');
+      line.style.setProperty('--scroll-line-origin', origin);
+      line.style.setProperty('--scroll-line-delay', `${index * 110}ms`);
       line.setAttribute('aria-hidden', 'true');
       element.style.setProperty(`border-${side.name}-color`, 'transparent');
       element.appendChild(line);
@@ -193,18 +214,52 @@ function initializeScrollLineReveal(root = document) {
   }
 
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
+    entries
+      .filter((entry) => entry.isIntersecting)
+      .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)
+      .forEach((entry, index) => {
+      entry.target.style.setProperty('--scroll-host-delay', `${Math.min(index * 70, 280)}ms`);
       entry.target.classList.add('is-line-visible');
       observer.unobserve(entry.target);
     });
-  }, { rootMargin: '0px 0px -12% 0px', threshold: 0.01 });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.01 });
 
   hosts.forEach((host) => observer.observe(host));
 }
 
 window.initializeScrollLineReveal = initializeScrollLineReveal;
 initializeScrollLineReveal();
+
+function initializeGeneratedGridLineReveal(root = document) {
+  if (reducedMotionQuery.matches) return;
+  const grids = root.matches?.('.artists-grid,.news-card-grid')
+    ? [root]
+    : [...root.querySelectorAll('.artists-grid,.news-card-grid')];
+
+  grids.forEach((grid) => {
+    if (grid.classList.contains('grid-line-reveal')) return;
+    grid.classList.add(
+      'grid-line-reveal',
+      Math.random() < 0.5 ? 'grid-lines-x-from-left' : 'grid-lines-x-from-right',
+      Math.random() < 0.5 ? 'grid-lines-y-from-top' : 'grid-lines-y-from-bottom',
+    );
+
+    const showGridLines = () => grid.classList.add('is-grid-line-visible');
+    if (!('IntersectionObserver' in window)) {
+      showGridLines();
+      return;
+    }
+    const observer = new IntersectionObserver((entries) => {
+      if (!entries.some((entry) => entry.isIntersecting)) return;
+      showGridLines();
+      observer.disconnect();
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.01 });
+    observer.observe(grid);
+  });
+}
+
+window.initializeGeneratedGridLineReveal = initializeGeneratedGridLineReveal;
+initializeGeneratedGridLineReveal();
 
 const rows = [...document.querySelectorAll('.project-row')];
 const preview = document.querySelector('.project-preview');
@@ -279,6 +334,37 @@ mobileNav?.querySelectorAll('a').forEach((link) => link.addEventListener('click'
   menuButton.setAttribute('aria-expanded', 'false');
   menuButton.textContent = 'Menu';
 }));
+
+const homePaletteButtons = [...document.querySelectorAll('[data-home-palette-option]')];
+const homePaletteStorageKey = 'midou-home-palette';
+
+function setHomePalette(palette, save = true) {
+  const allowedPalettes = ['default', 'version-6', 'version-7'];
+  const selectedPalette = allowedPalettes.includes(palette) ? palette : 'default';
+  document.documentElement.dataset.homePalette = selectedPalette;
+  homePaletteButtons.forEach((button) => {
+    button.setAttribute('aria-pressed', String(button.dataset.homePaletteOption === selectedPalette));
+  });
+  if (!save) return;
+  try {
+    localStorage.setItem(homePaletteStorageKey, selectedPalette);
+  } catch {
+    // Local file previews can block storage; the switch still works for the current page view.
+  }
+}
+
+if (homePaletteButtons.length) {
+  let savedPalette = 'default';
+  try {
+    savedPalette = localStorage.getItem(homePaletteStorageKey) || 'default';
+  } catch {
+    savedPalette = 'default';
+  }
+  setHomePalette(savedPalette, false);
+  homePaletteButtons.forEach((button) => {
+    button.addEventListener('click', () => setHomePalette(button.dataset.homePaletteOption));
+  });
+}
 
 const projectSectionLinks = [...document.querySelectorAll('.project-section-nav a')];
 const projectSections = projectSectionLinks

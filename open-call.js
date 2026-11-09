@@ -29,15 +29,23 @@ function renderOpenCall(data) {
       return paragraph;
     }));
   }
-  if (gallery && Array.isArray(data.galleryUrls) && data.galleryUrls.length) {
-    const existingImages = [...gallery.querySelectorAll("img")];
-    data.galleryUrls.forEach((url, index) => {
-      const image = existingImages[index] || document.createElement("img");
-      image.src = openCallImageSource(url);
-      image.alt = `米豆藝術空間圖片 ${index + 1}`;
-      if (!image.parentElement) gallery.appendChild(image);
-    });
-    existingImages.slice(data.galleryUrls.length).forEach(image => image.remove());
+  const galleryItems = Array.isArray(data.galleryItems) && data.galleryItems.length
+    ? data.galleryItems
+    : (data.galleryUrls || []).map(url => ({ url, caption: "" }));
+  if (gallery && galleryItems.length) {
+    gallery.replaceChildren(...galleryItems.map((item, index) => {
+      const figure = document.createElement("figure");
+      const image = document.createElement("img");
+      image.src = openCallImageSource(item.url);
+      image.alt = item.caption || `米豆藝術空間圖片 ${index + 1}`;
+      figure.appendChild(image);
+      if (item.caption) {
+        const caption = document.createElement("figcaption");
+        caption.textContent = item.caption;
+        figure.appendChild(caption);
+      }
+      return figure;
+    }));
   }
 }
 

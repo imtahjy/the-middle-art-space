@@ -87,6 +87,10 @@ function renderArtists(records) {
     empty.innerHTML = '<span class="artist-portrait"></span><span class="artist-info"></span>';
     grid.appendChild(empty);
   }
+  requestAnimationFrame(() => {
+    window.initializeScrollLineReveal?.(grid);
+    window.initializeGeneratedGridLineReveal?.(grid);
+  });
 }
 
 function readArtistsDatabase() {

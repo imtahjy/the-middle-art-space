@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="米豆藝術空間｜展覽、藝術交流與最新消息">
   <title>米豆藝術空間 The Middle Art Space</title>
-  <link rel="stylesheet" href="styles.css?v=20261031-1">
+  <link rel="stylesheet" href="styles.css?v=20261109-10">
 </head>
-<body>
+<body class="home-page">
   <aside class="sidebar" aria-label="主要選單">
     <a class="brand" href="#home" aria-label="米豆藝術空間首頁">
       <img src="assets/logo.png" alt="The Middle Art Space">
@@ -42,6 +42,12 @@
     </nav>
   </header>
 
+  <div class="home-palette-switch" role="group" aria-label="首頁配色版本">
+    <button type="button" data-home-palette-option="default" aria-pressed="true">1</button>
+    <button type="button" data-home-palette-option="version-6" aria-pressed="false">2</button>
+    <button type="button" data-home-palette-option="version-7" aria-pressed="false">3</button>
+  </div>
+
   <main>
     <section id="home" class="hero" aria-label="主視覺">
       <a class="hero-link" href="#project-fiber" aria-label="查看纖遇鮮展覽">
@@ -61,6 +67,7 @@
       </div>
     </section>
 
+    <div class="home-content-card">
     <section id="exhibitions" class="section exhibitions">
       <h1>Exhibitions</h1>
       <div class="project-list">
@@ -88,6 +95,7 @@
       </div>
       <a class="view-all" href="news.html">→ <span>View all News</span></a>
     </section>
+    </div>
 
     <footer class="footer">
       <div class="footer-top">
@@ -104,6 +112,6 @@
       <div class="footer-bottom"><div class="footer-socials"><a href="#" aria-label="Instagram"><img src="assets/footer-instagram.svg" alt=""></a><a href="#" aria-label="Facebook"><img src="assets/footer-facebook.svg" alt=""></a></div><p>Copyright © 2026 All rights reserved.</p></div>
     </footer>
   </main>
-  <script src="script.js?v=20261030-3"></script>
+  <script src="script.js?v=20261109-9"></script>
 </body>
 </html>
