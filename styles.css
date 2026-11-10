@@ -285,7 +285,7 @@
   }
 }
 
-/* Homepage palette comparison — Figma 584:3504, 584:3063, 585:3811, 585:3964. */
+/* Homepage palette comparison — options 1–4. */
 .home-palette-switch{
   position:fixed;
   z-index:80;
@@ -365,9 +365,30 @@ html[data-home-palette="version-6"] .news{
   color:#292623;
 }
 
+/* Option 4 — Figma 584:3063: dark content, dark exhibition bar, white footer. */
+html[data-home-palette="version-3"] body{
+  background:#f9f8f6;
+  color:rgba(255,255,255,.9);
+}
+html[data-home-palette="version-3"] .hero .hero-bottom{
+  background:#19191a;
+  color:rgba(255,255,255,.9);
+}
 html[data-home-palette="version-3"] .hero-caption{
-  background:#fff;
-  color:#000;
+  background:transparent;
+  color:rgba(255,255,255,.9);
+}
+html[data-home-palette="version-3"] .hero .slide-index,
+html[data-home-palette="version-3"] .hero .slide-index button{
+  color:rgba(255,255,255,.9);
+}
+html[data-home-palette="version-3"] .hero .slide-index button:hover,
+html[data-home-palette="version-3"] .hero .slide-index button:focus-visible{
+  background:#29292b;
+}
+html[data-home-palette="version-3"] .home-content-card{
+  border-top-color:#4b4c4e;
+  background:#19191a;
 }
 html[data-home-palette="version-4"] .hero-caption{
   background:#decfc1;
@@ -381,7 +402,14 @@ html[data-home-palette="version-4"] .news{
   background:#19191a;
   color:#eaeaeb;
 }
-html[data-home-palette="version-3"] .exhibitions .project-row,
+html[data-home-palette="version-3"] .exhibitions,
+html[data-home-palette="version-3"] .news{
+  color:rgba(255,255,255,.9);
+}
+html[data-home-palette="version-3"] .exhibitions .project-row{
+  background:#19191a;
+  color:rgba(255,255,255,.9);
+}
 html[data-home-palette="version-4"] .exhibitions .project-row{
   background:#19191a;
   color:#eaeaeb;

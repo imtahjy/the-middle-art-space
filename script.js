@@ -339,7 +339,7 @@ const homePaletteButtons = [...document.querySelectorAll('[data-home-palette-opt
 const homePaletteStorageKey = 'midou-home-palette';
 
 function setHomePalette(palette, save = true) {
-  const allowedPalettes = ['default', 'version-6', 'version-7'];
+  const allowedPalettes = ['default', 'version-6', 'version-7', 'version-3'];
   const selectedPalette = allowedPalettes.includes(palette) ? palette : 'default';
   document.documentElement.dataset.homePalette = selectedPalette;
   homePaletteButtons.forEach((button) => {
