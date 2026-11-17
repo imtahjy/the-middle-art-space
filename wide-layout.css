@@ -7,7 +7,7 @@
   border-left: 0;
 }
 
-@media (min-width: 1441px) {
+@media (min-width:1441px) {
   :root {
     --wide-content: 1024px;
     --wide-gutter: calc((100% - var(--wide-content)) / 2);

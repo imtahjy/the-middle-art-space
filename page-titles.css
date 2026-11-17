@@ -42,7 +42,7 @@
   top: 152px;
 }
 
-@media (max-width: 900px) {
+@media (max-width:1024px) {
   :root {
     --page-title-left: 24px;
     --page-title-top: 105px;
@@ -73,7 +73,7 @@
   }
 }
 
-@media (max-width: 560px) {
+@media (max-width:767px) {
   :root {
     --page-title-left: 20px;
     --page-title-top: 98px;

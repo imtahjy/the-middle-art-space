@@ -1,18 +1,28 @@
 body.interior{background:#f9f8f6}.interior-main{min-height:100vh}.page-heading{height:200px;margin:0;padding:56px 80px 0;border-bottom:1px solid var(--line);font-size:40px;line-height:1.2;font-weight:200;color:#1e1e1e}.sidebar .active{opacity:.45}.list-page{padding-bottom:48px}.news-list-item{min-height:144px;padding:24px 80px;border-bottom:1px solid var(--line);display:flex;gap:40px;align-items:center}.news-list-item img{width:96px;height:96px;flex:0 0 96px;object-fit:cover}.news-list-item h2{margin:0;font-size:16px;line-height:32px;font-weight:400}.news-list-item time{display:block;margin-top:4px;color:#636569;font-size:14px;line-height:20px}.news-list-item:hover{background:#ebe8e4}.current-strip{height:48px;padding:0 80px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:9px;white-space:nowrap;overflow:hidden;font-size:14px}.current-strip .dot{width:4px;height:4px;flex:none;border-radius:50%;background:#1e1e1e}.exhibition-hero{position:relative;margin:0 80px;height:539px;border-left:1px solid var(--line);border-right:1px solid var(--line);overflow:hidden}.exhibition-hero>img{width:100%;height:100%;object-fit:cover}.current-badge{position:absolute;right:0;bottom:0;width:181px;padding:16px;color:#fff;background:rgba(0,0,0,.6);backdrop-filter:blur(10px);display:flex;justify-content:space-between;align-items:flex-end;font-size:16px;line-height:24px}.current-badge b{font-size:22px;font-weight:400}.archive-head{height:81px;margin:0 80px;padding:0 24px;border:1px solid var(--line);border-bottom:0;display:flex;align-items:center;justify-content:space-between}.archive-head h2{margin:0;font-size:20px;font-weight:400}.archive-head select{border:0;background:transparent;padding:8px;font:14px inherit}.project-grid{margin:0 80px;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}.project-card{min-height:424px;padding:24px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;flex-direction:column;align-items:center;gap:40px}.project-card:hover{background:#ebe8e4}.project-card img{width:120px;height:120px;object-fit:cover}.project-card-info{width:100%;display:flex;flex-direction:column;gap:24px}.project-card h2{margin:0;font-size:16px;line-height:24px;font-weight:400}.project-card time{color:#636569;font-size:16px;line-height:24px}.exchange-list{padding-bottom:18px}.exchange-item{min-height:120px;padding:24px 80px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:56px 96px 1fr;gap:24px;align-items:start}.exchange-item:hover{background:#ebe8e4}.exchange-year{font-size:16px;line-height:24px}.exchange-item img{width:96px;height:96px;object-fit:cover}.exchange-copy h2{margin:0 0 4px;font-size:16px;line-height:24px;font-weight:400}.exchange-copy p{margin:0;font-size:16px;line-height:24px}.exchange-copy .country{margin-top:24px;color:#636569;font-size:14px}.interior .mobile-header{display:none}
-@media(max-width:900px){.interior .mobile-header{display:flex}.page-heading{height:170px;padding:105px 24px 0;font-size:31px}.news-list-item{padding:20px 24px;gap:20px}.current-strip{padding:0 24px}.exhibition-hero{margin:0;height:55vw}.archive-head,.project-grid{margin-left:24px;margin-right:24px}.project-grid{grid-template-columns:repeat(2,1fr)}.exchange-item{padding:24px;grid-template-columns:45px 88px 1fr}.exchange-item img{width:88px;height:88px}}
-@media(max-width:560px){.page-heading{height:150px;padding-top:98px;font-size:27px}.news-list-item{align-items:flex-start}.news-list-item img{width:76px;height:76px;flex-basis:76px}.news-list-item h2{font-size:14px;line-height:22px}.news-list-item time{font-size:12px}.current-strip{height:58px;font-size:11px}.exhibition-hero{margin:0;height:72vw;border:0}.current-badge{width:150px;font-size:13px;line-height:18px}.archive-head{margin:0;padding:0 20px}.project-grid{margin:0;grid-template-columns:repeat(2,minmax(0,1fr))}.project-card{min-width:0;min-height:360px;padding:20px 16px;gap:28px}.project-card img{width:min(120px,100%);height:auto;aspect-ratio:1}.exchange-item{grid-template-columns:38px 72px 1fr;gap:12px;padding:20px 16px}.exchange-item img{width:72px;height:72px}.exchange-copy h2,.exchange-copy p{font-size:13px;line-height:19px}.exchange-copy .country{margin-top:12px}}
+@media(max-width:1024px){.interior .mobile-header{display:flex}.page-heading{height:170px;padding:105px 24px 0;font-size:31px}.news-list-item{padding:20px 24px;gap:20px}.current-strip{padding:0 24px}.exhibition-hero{margin:0;height:55vw}.archive-head,.project-grid{margin-left:24px;margin-right:24px}.project-grid{grid-template-columns:repeat(2,1fr)}.exchange-item{padding:24px;grid-template-columns:45px 88px 1fr}.exchange-item img{width:88px;height:88px}}
+@media(max-width:767px){.page-heading{height:150px;padding-top:98px;font-size:27px}.news-list-item{align-items:flex-start}.news-list-item img{width:76px;height:76px;flex-basis:76px}.news-list-item h2{font-size:14px;line-height:22px}.news-list-item time{font-size:12px}.current-strip{height:58px;font-size:11px}.exhibition-hero{margin:0;height:72vw;border:0}.current-badge{width:150px;font-size:13px;line-height:18px}.archive-head{margin:0;padding:0 20px}.project-grid{margin:0;grid-template-columns:repeat(2,minmax(0,1fr))}.project-card{min-width:0;min-height:360px;padding:20px 16px;gap:28px}.project-card img{width:min(120px,100%);height:auto;aspect-ratio:1}.exchange-item{grid-template-columns:38px 72px 1fr;gap:12px;padding:20px 16px}.exchange-item img{width:72px;height:72px}.exchange-copy h2,.exchange-copy p{font-size:13px;line-height:19px}.exchange-copy .country{margin-top:12px}}
 .exhibitions-page .nav-list{gap:16px}.exhibitions-heading{position:relative;height:200px;padding:0}.exhibitions-heading h1{position:absolute;left:80px;top:108px;transform:translateY(-50%);margin:0;font-size:40px;line-height:normal;font-weight:200;color:#1e1e1e}.year-control{position:absolute;left:80px;top:160px;height:32px;display:flex;align-items:center;font-size:14px;line-height:20px}.year-control select{border:0;background:transparent;padding:0 18px 0 0;font:inherit;color:#19191a}.exhibitions-page .project-grid{margin-left:79px;margin-right:80px;border-color:var(--line)}.exhibitions-page .project-card{position:relative;border-color:var(--line)}.exhibitions-page .project-card:nth-child(n+4){min-height:376px}.now-tag{position:absolute;top:23px;right:14px;padding:0 8px;border-radius:4px;background:#19191a;color:#f5f5f5;font-size:12px;line-height:16px}
-@media(max-width:900px){.exhibitions-heading{height:170px}.exhibitions-heading h1{left:24px;top:116px;font-size:31px;line-height:38px}.year-control{left:24px;top:140px}.exhibitions-page .project-grid{margin:0 24px}}
-@media(max-width:560px){.exhibitions-heading{height:165px}.exhibitions-heading h1{left:20px;top:112px;font-size:27px;line-height:32px}.year-control{left:20px;top:136px}.exhibitions-page .project-grid{margin:0}.exhibitions-page .project-card:nth-child(n+4){min-height:360px}}
+@media(max-width:1024px){.exhibitions-heading{height:170px}.exhibitions-heading h1{left:24px;top:116px;font-size:31px;line-height:38px}.year-control{left:24px;top:140px}.exhibitions-page .project-grid{margin:0 24px}}
+@media(max-width:767px){.exhibitions-heading{height:165px}.exhibitions-heading h1{left:20px;top:112px;font-size:27px;line-height:32px}.year-control{left:20px;top:136px}.exhibitions-page .project-grid{margin:0}.exhibitions-page .project-card:nth-child(n+4){min-height:360px}}
 .interior .sidebar .active{opacity:1}
-@media(min-width:901px){.exhibitions-page .project-grid{position:relative;margin-left:0;margin-right:0;grid-template-columns:minmax(0,1fr) repeat(3,minmax(0,341.333px)) minmax(0,1fr);border-left:0}.exhibitions-page .project-card:nth-child(1),.exhibitions-page .project-card:nth-child(4){grid-column:2}.exhibitions-page .project-card:nth-child(2),.exhibitions-page .project-card:nth-child(5){grid-column:3}.exhibitions-page .project-card:nth-child(3),.exhibitions-page .project-card:nth-child(6){grid-column:4}.exhibitions-page .project-card:nth-child(-n+3){grid-row:1}.exhibitions-page .project-card:nth-child(n+4){grid-row:2}.exhibitions-page .project-grid:before,.exhibitions-page .project-grid:after{content:"";grid-row:1/3;min-width:0;border-bottom:1px solid var(--line);background:linear-gradient(to bottom,transparent 423px,var(--line) 423px,var(--line) 424px,transparent 424px)}.exhibitions-page .project-grid:before{grid-column:1;border-right:1px solid var(--line)}.exhibitions-page .project-grid:after{grid-column:5;border-left:1px solid var(--line)}}
-@media(min-width:901px) and (max-width:1279px){.exhibitions-heading h1,.year-control{left:max(0px,calc((100% - 682.666px)/2))}.exhibitions-page .project-grid{grid-template-columns:minmax(0,1fr) repeat(2,minmax(0,341.333px)) minmax(0,1fr);background:repeating-linear-gradient(to bottom,transparent 0,transparent 423px,var(--line) 423px,var(--line) 424px)}.exhibitions-page .project-card{grid-row:auto!important}.exhibitions-page .project-card:nth-child(odd){grid-column:2}.exhibitions-page .project-card:nth-child(even){grid-column:3}.exhibitions-page .project-grid:before,.exhibitions-page .project-grid:after{grid-row:1/4;background:none}.exhibitions-page .project-grid:before{grid-column:1}.exhibitions-page .project-grid:after{grid-column:4}}
-@media(min-width:1280px) and (max-width:1619px){.exhibitions-heading h1,.year-control{left:max(0px,calc((100% - 1024px)/2))}}
-@media(min-width:1620px){.exhibitions-heading h1,.year-control{left:max(0px,calc((100% - 1365.332px)/2))}.exhibitions-page .project-grid{grid-template-columns:minmax(0,1fr) repeat(4,minmax(0,341.333px)) minmax(0,1fr)}.exhibitions-page .project-card{grid-row:auto!important}.exhibitions-page .project-card:nth-child(1),.exhibitions-page .project-card:nth-child(5){grid-column:2}.exhibitions-page .project-card:nth-child(2),.exhibitions-page .project-card:nth-child(6){grid-column:3}.exhibitions-page .project-card:nth-child(3){grid-column:4}.exhibitions-page .project-card:nth-child(4){grid-column:5}.exhibitions-page .project-grid:before,.exhibitions-page .project-grid:after{grid-row:1/3}.exhibitions-page .project-grid:before{grid-column:1}.exhibitions-page .project-grid:after{grid-column:6}}
+@media(min-width:1025px){.exhibitions-page .project-grid{position:relative;margin-left:0;margin-right:0;grid-template-columns:minmax(0,1fr) repeat(3,minmax(0,341.333px)) minmax(0,1fr);border-left:0}.exhibitions-page .project-card:nth-child(1),.exhibitions-page .project-card:nth-child(4){grid-column:2}.exhibitions-page .project-card:nth-child(2),.exhibitions-page .project-card:nth-child(5){grid-column:3}.exhibitions-page .project-card:nth-child(3),.exhibitions-page .project-card:nth-child(6){grid-column:4}.exhibitions-page .project-card:nth-child(-n+3){grid-row:1}.exhibitions-page .project-card:nth-child(n+4){grid-row:2}.exhibitions-page .project-grid:before,.exhibitions-page .project-grid:after{content:"";grid-row:1/3;min-width:0;border-bottom:1px solid var(--line);background:linear-gradient(to bottom,transparent 423px,var(--line) 423px,var(--line) 424px,transparent 424px)}.exhibitions-page .project-grid:before{grid-column:1;border-right:1px solid var(--line)}.exhibitions-page .project-grid:after{grid-column:5;border-left:1px solid var(--line)}}
+@media(min-width:1025px) and (max-width:1440px){.exhibitions-heading h1,.year-control{left:max(0px,calc((100% - 682.666px)/2))}.exhibitions-page .project-grid{grid-template-columns:minmax(0,1fr) repeat(2,minmax(0,341.333px)) minmax(0,1fr);background:repeating-linear-gradient(to bottom,transparent 0,transparent 423px,var(--line) 423px,var(--line) 424px)}.exhibitions-page .project-card{grid-row:auto!important}.exhibitions-page .project-card:nth-child(odd){grid-column:2}.exhibitions-page .project-card:nth-child(even){grid-column:3}.exhibitions-page .project-grid:before,.exhibitions-page .project-grid:after{grid-row:1/4;background:none}.exhibitions-page .project-grid:before{grid-column:1}.exhibitions-page .project-grid:after{grid-column:4}}
+@media(min-width:1025px) and (max-width:1440px){.exhibitions-heading h1,.year-control{left:max(0px,calc((100% - 1024px)/2))}}
+@media(min-width:1441px){.exhibitions-heading h1,.year-control{left:max(0px,calc((100% - 1365.332px)/2))}.exhibitions-page .project-grid{grid-template-columns:minmax(0,1fr) repeat(4,minmax(0,341.333px)) minmax(0,1fr)}.exhibitions-page .project-card{grid-row:auto!important}.exhibitions-page .project-card:nth-child(1),.exhibitions-page .project-card:nth-child(5){grid-column:2}.exhibitions-page .project-card:nth-child(2),.exhibitions-page .project-card:nth-child(6){grid-column:3}.exhibitions-page .project-card:nth-child(3){grid-column:4}.exhibitions-page .project-card:nth-child(4){grid-column:5}.exhibitions-page .project-grid:before,.exhibitions-page .project-grid:after{grid-row:1/3}.exhibitions-page .project-grid:before{grid-column:1}.exhibitions-page .project-grid:after{grid-column:6}}
 .publications-page .publications-heading{height:200px}.publications-page .project-card{justify-content:flex-start}.publications-page .project-card-info{gap:0}
 .publications-page .publication-grid{grid-auto-rows:1fr}
 .publications-page .publication-grid>.project-card{height:auto;min-height:424px}
 .project-card-empty{display:none;pointer-events:none}
+
+/* Reserve 24px below the Year control at every shared breakpoint. */
+.exhibitions-list-page .exhibitions-list-heading{height:216px}
+.exhibitions-list-page .exhibitions-list-heading .year-control{top:auto;bottom:24px}
+@media(max-width:1024px){
+  .exhibitions-list-page .exhibitions-list-heading{height:216px}
+}
+@media(max-width:767px){
+  .exhibitions-list-page .exhibitions-list-heading{height:210px}
+}
 
 /* News grid follows the Figma 403:597 four-column composition. */
 .news-grid-page{--news-grid-edge:80px;--news-grid-top:200px;--news-cols:4;--news-col-width:25%}
@@ -55,7 +65,7 @@ body.interior{background:#f9f8f6}.interior-main{min-height:100vh}.page-heading{h
 .exhibition-meta{display:flex;align-items:flex-start;gap:8px}
 .list-now-tag{display:inline-flex;align-items:center;justify-content:center;padding:4px 8px;border-radius:4px;background:#19191a;color:#f5f5f5;font-size:12px;line-height:16px}
 
-@media(max-width:900px){
+@media(max-width:1024px){
   .news-grid-page{--news-grid-edge:24px;--news-grid-top:170px;--news-cols:2;--news-col-width:50%}
   .news-grid-page .exhibitions-heading{height:170px}
   .news-grid-page .exhibitions-heading h1{top:116px}
@@ -71,7 +81,7 @@ body.interior{background:#f9f8f6}.interior-main{min-height:100vh}.page-heading{h
   .exhibition-list-item img{width:104px;height:104px;flex-basis:104px}
   .exhibition-list-info{min-height:104px}
 }
-@media(max-width:560px){
+@media(max-width:767px){
   .news-grid-page{--news-grid-edge:0px}
   .news-grid-page .exhibitions-heading{height:165px}
   .news-grid-page .exhibitions-heading h1{left:20px!important;top:112px}
@@ -93,7 +103,7 @@ body.interior{background:#f9f8f6}.interior-main{min-height:100vh}.page-heading{h
 
 /* Fluid desktop grid: keep the responsive column count without locking the
    page to the 1440px composition width. */
-@media(min-width:901px){
+@media(min-width:1025px){
   .exhibitions-page{--fluid-grid-edge:80px}
   .exhibitions-heading h1,
   .year-control{left:var(--fluid-grid-edge)!important}
@@ -132,16 +142,16 @@ body.interior{background:#f9f8f6}.interior-main{min-height:100vh}.page-heading{h
   .exhibitions-page .project-grid::before{right:100%}
   .exhibitions-page .project-grid::after{left:100%;border-left:0}
 }
-@media(min-width:901px) and (max-width:1279px){
+@media(min-width:1025px) and (max-width:1440px){
   .exhibitions-page .project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
-@media(min-width:1620px){
+@media(min-width:1441px){
   .exhibitions-page .project-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
   .exhibitions-page .project-card-empty{display:block}
 }
 
 /* Keep the News composition at four columns after the shared fluid-grid rules. */
-@media(min-width:901px){
+@media(min-width:1025px){
   .exhibitions-page.news-grid-page .news-card-grid{
     margin-left:var(--news-grid-edge);
     margin-right:var(--news-grid-edge);
@@ -163,7 +173,7 @@ body.interior{background:#f9f8f6}.interior-main{min-height:100vh}.page-heading{h
   }
 }
 
-@media(min-width:901px) and (max-width:1199px){
+@media(min-width:1025px) and (max-width:1440px){
   .news-grid-page{--news-cols:2;--news-col-width:50%}
   .news-grid-page .news-card-grid,
   .exhibitions-page.news-grid-page .news-card-grid{
@@ -176,7 +186,7 @@ body.interior{background:#f9f8f6}.interior-main{min-height:100vh}.page-heading{h
 
 /* Draw every News row divider with one continuous layer so fractional device
    scaling cannot offset the side extensions from the card boundaries. */
-@media(min-width:561px){
+@media(min-width:768px){
   .exhibitions-page.news-grid-page .news-card-grid{
     border-top:0;
     border-left:0;
@@ -225,14 +235,14 @@ body.interior{background:#f9f8f6}.interior-main{min-height:100vh}.page-heading{h
   }
 }
 
-@media(max-width:560px){
+@media(max-width:767px){
   .publications-page .publication-grid>.project-card{min-height:360px}
   .news-grid-columns{display:none}
 }
 
 /* Publications uses one continuous horizontal layer, matching News. This
    avoids fractional column widths leaving seams between card borders. */
-@media(min-width:561px){
+@media(min-width:768px){
   .publications-page{--publication-grid-edge:80px}
   .publications-page .publication-grid{border-top:0}
   .publications-page .publication-grid>.project-card{border-bottom:0}
@@ -258,6 +268,152 @@ body.interior{background:#f9f8f6}.interior-main{min-height:100vh}.page-heading{h
   .publications-page .publication-grid::after{display:none}
 }
 
-@media(min-width:561px) and (max-width:900px){
+@media(min-width:768px) and (max-width:1024px){
   .publications-page{--publication-grid-edge:24px}
+}
+
+/* Wide screens use the continuous four-column News grid. */
+@media(min-width:1441px){
+  /* The continuous layers own all lines; cards must not add a second border. */
+  .exhibitions-page.news-grid-page .news-card-grid{
+    border:0;
+    background:none;
+  }
+  .exhibitions-page.news-grid-page .news-card-grid>.project-card{
+    border:0;
+    min-height:0;
+  }
+  .exhibitions-page.news-grid-page .news-card-grid::before{
+    border:0;
+    top:0;
+    bottom:-1px;
+    background:repeating-linear-gradient(to bottom,var(--line) 0,var(--line) 1px,transparent 1px,transparent 340px);
+  }
+}
+
+/* Tablet cards use two columns; mobile switches to image-and-copy rows. */
+@media(max-width:1440px){
+  .exhibitions-page.news-grid-page .news-card-grid,
+  .exhibitions-page.publications-page .publication-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    border-top:1px solid var(--line);
+    border-left:1px solid var(--line);
+  }
+  .exhibitions-page.news-grid-page .news-card-grid::before,
+  .exhibitions-page.news-grid-page .news-card-grid::after,
+  .publications-page .publication-grid::before,
+  .publications-page .publication-grid::after,
+  .news-grid-page .news-grid-columns{
+    display:none;
+  }
+  .exhibitions-page.news-grid-page .news-card-grid>.project-card,
+  .publications-page .publication-grid>.project-card{
+    grid-column:auto!important;
+    grid-row:auto!important;
+    height:auto;
+    min-height:0;
+    padding:32px 24px;
+    border-right:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .exhibitions-page.news-grid-page .news-card-grid>.news-empty,
+  .publications-page .publication-grid>.project-card-empty{
+    display:none;
+  }
+}
+
+/* Extend tablet row borders across the outer gutters, using each row's
+   actual height rather than a fixed repeating background. */
+@media(min-width:768px) and (max-width:1440px){
+  .news-grid-page,
+  .publications-page{--tablet-grid-edge:80px}
+  .exhibitions-page.news-grid-page .news-card-grid::before,
+  .publications-page .publication-grid::before,
+  .exhibitions-page.news-grid-page .news-card-grid::after,
+  .publications-page .publication-grid::after{
+    display:block;
+    position:absolute;
+    top:-1px;
+    bottom:auto;
+    width:var(--tablet-grid-edge);
+    height:1px;
+    border:0;
+    background:var(--line);
+    pointer-events:none;
+  }
+  .exhibitions-page.news-grid-page .news-card-grid::before,
+  .publications-page .publication-grid::before{left:auto;right:100%}
+  .exhibitions-page.news-grid-page .news-card-grid::after,
+  .publications-page .publication-grid::after{left:100%;right:auto}
+  .news-card-grid>.project-card:nth-child(odd)::before,
+  .publication-grid>.project-card:nth-child(odd)::before,
+  .news-card-grid>.project-card:nth-child(even)::after,
+  .publication-grid>.project-card:nth-child(even)::after{
+    content:"";
+    position:absolute;
+    bottom:0;
+    width:var(--tablet-grid-edge);
+    height:1px;
+    background:var(--line);
+    pointer-events:none;
+  }
+  .news-card-grid>.project-card:nth-child(odd)::before,
+  .publication-grid>.project-card:nth-child(odd)::before{right:100%}
+  .news-card-grid>.project-card:nth-child(even)::after,
+  .publication-grid>.project-card:nth-child(even)::after{left:100%}
+}
+@media(min-width:768px) and (max-width:1024px){
+  .news-grid-page,
+  .publications-page{--tablet-grid-edge:24px}
+}
+
+@media(max-width:767px){
+  .exhibitions-page.news-grid-page .news-card-grid,
+  .exhibitions-page.publications-page .publication-grid{
+    margin:0;
+    grid-template-columns:minmax(0,1fr);
+    grid-auto-rows:auto;
+    border-left:0;
+  }
+  .exhibitions-page.news-grid-page .news-card-grid>.project-card,
+  .publications-page .publication-grid>.project-card{
+    flex-direction:row;
+    align-items:flex-start;
+    justify-content:flex-start;
+    gap:20px;
+    padding:20px 24px;
+    border-right:0;
+  }
+  .news-grid-page .news-card img,
+  .publications-page .publication-grid>.project-card img{
+    width:104px;
+    height:104px;
+    flex:0 0 104px;
+    object-fit:cover;
+  }
+  .news-grid-page .news-card-copy,
+  .publications-page .project-card-info{
+    flex:1;
+    min-width:0;
+    width:auto;
+    overflow-wrap:break-word;
+  }
+  .news-grid-page .news-card time{text-align:left}
+}
+
+@media(max-width:767px){
+  .exhibitions-page.news-grid-page .news-card-grid>.project-card,
+  .publications-page .publication-grid>.project-card{
+    padding:20px;
+  }
+  .news-grid-page .news-card img,
+  .publications-page .publication-grid>.project-card img{
+    width:76px;
+    height:76px;
+    flex-basis:76px;
+  }
+  .publications-page .publication-grid>.project-card h2{
+    font-size:14px;
+    line-height:22px;
+  }
 }

@@ -14,7 +14,7 @@
 
 .exchange-page .exchange-meta{margin:0;color:#636569;font-size:16px;line-height:24px;display:flex;gap:16px}
 
-@media (max-width: 900px) {
+@media (max-width:1024px) {
   .exchange-page .exchange-item {
     min-height: 136px;
     gap: 24px;
@@ -31,7 +31,7 @@
 
 }
 
-@media (max-width: 560px) {
+@media (max-width:767px) {
   .exchange-page .exchange-item {
     min-height: 112px;
     padding: 20px;
@@ -51,7 +51,7 @@
   .exchange-page .exchange-meta{font-size:12px;line-height:18px}
 }
 
-@media (min-width: 901px) and (max-width: 1199px) {
+@media (min-width:1025px) and (max-width:1440px) {
   .exchange-page .exchange-copy {
     min-height: 120px;
   }

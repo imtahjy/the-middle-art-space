@@ -169,6 +169,9 @@ function initializeScrollLineReveal(root = document) {
   // visible pause on border-heavy pages such as Exhibitions.
   candidates.forEach((element) => {
     if (!(element instanceof HTMLElement) || element.closest('.page-transition-overlay') || element.closest('[data-static-lines]')) return;
+    // A long publication grid must keep its outer frame visible, including
+    // after a responsive resize. Animate the individual cards instead.
+    if (element.matches('.publication-grid')) return;
     if (element.classList.contains('scroll-line-host')) return;
 
     const rect = element.getBoundingClientRect();
@@ -373,7 +376,7 @@ const projectSections = projectSectionLinks
 
 if (projectSectionLinks.length && projectSections.length) {
   const updateProjectSectionNav = () => {
-    const marker = window.innerWidth <= 760 ? 96 : 80;
+    const marker = window.innerWidth <= 1024 ? 96 : 80;
     let currentSection = projectSections[0];
     projectSections.forEach((section) => {
       if (section.getBoundingClientRect().top <= marker) currentSection = section;

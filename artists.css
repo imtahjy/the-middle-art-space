@@ -23,18 +23,18 @@
 .artist-card-empty .artist-info{padding:0}
 .artists-grid::before,.artists-grid::after{content:"";position:absolute;pointer-events:none}
 
-@media(max-width:1199px){
+@media(max-width:1440px){
   .artists-page{--artist-cols:2;--artist-col-width:50%;--artist-card-width:calc((100vw - var(--sidebar) - (2 * var(--artists-edge)))/2)}
 }
 
-@media(max-width:900px){
+@media(max-width:1024px){
   .artists-page{--artists-edge:24px;--artists-grid-top:170px}
   .artists-main{margin-left:0;padding-top:68px}
   .artists-heading{height:102px}
   .artists-heading h1{left:24px;top:37px;font-size:31px;line-height:38px}
 }
 
-@media(min-width:561px){
+@media(min-width:768px){
   .artist-info{border-top:0}
   .artists-grid::before{
     left:calc(-1 * (var(--sidebar) + var(--artists-edge)));
@@ -72,7 +72,7 @@
   }
 }
 
-@media(max-width:560px){
+@media(max-width:767px){
   .artists-page{--artists-edge:0px;--artists-grid-top:150px;--artist-info-height:104px}
   .artists-grid{margin:0}
   .artists-heading{height:82px}

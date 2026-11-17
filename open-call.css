@@ -5,7 +5,7 @@
 .open-call-main{min-height:100vh;overflow:hidden}
 .open-call-main .page-heading{margin:0}
 .open-call-frame{margin:0 80px;border-right:1px solid var(--line);border-left:1px solid var(--line)}
-.open-call-hero{width:100%;height:auto;aspect-ratio:1025/538;object-fit:cover}
+.open-call-hero{display:block;width:100%;height:auto;object-fit:contain}
 .open-call-section{border-top:1px solid var(--line)}
 .open-call-section-heading{height:66px;border-bottom:1px solid var(--line);display:flex;align-items:center;padding:0 16px}
 .open-call-section-heading h2{margin:0;font-size:16px;line-height:24px;font-weight:600}
@@ -23,17 +23,16 @@
 .space-gallery figure:nth-child(6) img{object-position:left center}
 .space-gallery figcaption{margin-top:8px;color:#636569;font-size:12px;line-height:1.5}
 
-@media(max-width:900px){
+@media(max-width:1024px){
   .open-call-main{margin-left:0;padding-top:68px}
   .open-call-main .page-heading{height:102px;padding-top:37px}
   .open-call-frame{margin:0 24px}
   .space-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 
-@media(max-width:560px){
+@media(max-width:767px){
   .open-call-main .page-heading{height:82px;padding-top:30px}
   .open-call-frame{margin:0;border-right:0;border-left:0}
-  .open-call-hero{aspect-ratio:4/3}
   .open-call-section-heading{height:58px;padding:0 20px}
   .residency-copy{padding:20px;font-size:14px;line-height:22px}
   .space-gallery{gap:8px;padding:20px 20px 48px}
