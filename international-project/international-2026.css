@@ -7,6 +7,19 @@
 @media(max-width:1440px){.project-layout{padding-left:80px;padding-right:80px;gap:40px}.project-nav{width:160px;flex-basis:160px}.project-content{flex:1}.hero-title{left:80px;right:80px}.hero-title h1{font-size:48px;line-height:60px}.hero-title p{font-size:32px;line-height:44px}}
 @media(max-width:1024px){html{scroll-padding-top:20px}.hero{height:100svh;min-height:620px}.hero-image{inset:0;width:100%;height:100%;object-fit:cover}.hero-grid,.hero-pointer,.cursor-lines{display:none}.hero-title{left:40px;right:40px;top:40%;transform:translateY(-10%)}.hero-title h1{font-size:40px;line-height:52px}.hero-title p{margin-top:16px;font-size:24px;line-height:32px}.project-layout{padding:48px 40px 56px;display:block}.project-nav{display:none}.project-content{width:100%;gap:60px}.section{scroll-margin-top:24px}.section h2{font-size:24px;line-height:32px}.basic-info dl>div{display:block}.basic-info dt{width:auto;margin-bottom:4px}.basic-info dd{width:auto}.team-list li{flex-direction:column;gap:8px}.team-list span{width:auto;flex-basis:auto}.mobile-menu-button{display:block;position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:20;width:120px;padding:8px 24px;border:0;border-radius:100px;background:linear-gradient(90deg,#fff,rgba(255,255,255,.6));box-shadow:0 4.879px 29.276px rgba(255,255,255,.24);color:#fff;cursor:pointer}.mobile-menu-button.scrolled{width:114px;padding:8px 12px;background:linear-gradient(90deg,#303030,rgba(173,172,172,.6))}.mobile-project-nav{position:fixed;display:flex;visibility:hidden;opacity:0;transform:translate(-50%,-8px) scale(.94);top:18px;left:50%;z-index:21;width:229px;padding:12px 24px 24px;border-radius:24px;background:#f0f0f0;box-shadow:0 4.879px 29.276px rgba(255,255,255,.24);flex-direction:column;gap:12px;transition:.2s ease;transform-origin:top center}.mobile-project-nav.open{visibility:visible;opacity:1;transform:translate(-50%,0) scale(1)}.mobile-project-nav a,.mobile-project-nav span{color:#96989c;text-decoration:none;font-size:14px;line-height:20px}.mobile-project-nav a.active{font-weight:600;color:#000}.mobile-menu-close{align-self:center;width:204px;padding:8px;border:0;border-radius:24px;background:#fff;color:#000;cursor:pointer;margin-bottom:12px}}
 @media(max-width:767px){.hero-title{left:16px;right:16px;overflow-wrap:anywhere}.hero-title h1{font-size:24px;line-height:32px}.hero-title p{font-size:20px;line-height:32px}.project-layout{padding:40px 16px}.project-content{gap:48px}.section h2{font-size:20px;line-height:24px}.people-list li{padding:20px 12px}.team-list li{gap:4px}}
+/* Figma 621:1979: staggered column boundaries, with equal heights in each row. */
+.collage-four{
+  grid-template-columns:309.16fr 171.16fr 407.273fr;
+  grid-template-rows:438.54fr 311.161fr;
+  aspect-ratio:900 / 755.701;
+  gap:6px;
+}
+.collage-four span:nth-child(1){grid-column:1;grid-row:1;aspect-ratio:auto}
+.collage-four span:nth-child(2){grid-column:2 / 4;grid-row:1;aspect-ratio:auto}
+.collage-four span:nth-child(3){grid-column:1 / 3;grid-row:2;aspect-ratio:auto}
+.collage-four span:nth-child(4){grid-column:3;grid-row:2;aspect-ratio:auto}
+.collage-four span{min-width:0;min-height:0}
+.collage-four span:nth-child(3) img.pos-top{object-position:center bottom!important}
 .hero .hero-grid{display:none}
 /* Figma 619:1976 — the compact menu keeps one opaque appearance while scrolling. */
 @media(max-width:1024px){
